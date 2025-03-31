@@ -16,38 +16,62 @@ El propósito de esta actividad es aplicar los conocimientos adquiridos en los t
 
 ## Ejercicio 1
 
-### Enunciado
-Para un sistema de comunicaciones con 17 niveles de señal, que funciona en banda base, calcular el máximo ancho de banda si el ruido es despreciable y la tasa de transmisión es de 10 Mbits/s. ¿Qué tipo de medio guiado se podría utilizar para el sistema?
+## **Enunciado**
+Para un sistema de comunicaciones con **17 niveles de señal** que funciona en banda base, se pide **calcular el máximo ancho de banda** cuando el ruido se considera **despreciable** y la **tasa de transmisión** es de **10 Mbits/s**. Asimismo, se solicita indicar **qué tipo de medio guiado** se podría utilizar.
 
-### Resolución
-Usamos la **fórmula de Nyquist**:
+---
+
+## **Resolución**
+
+Se emplea la **Fórmula de Nyquist** para canales sin ruido, expresada como:
 
 \[
-C = 2B \cdot \log_{2}(M)
+C = 2B \cdot \log_2(M)
 \]
 
-Donde:
-- \( C = 10 \times 10^6 \) bps  
-- \( M = 17 \) niveles de señal  
+donde:
+- \( C \) es la **tasa de transmisión** en bits por segundo (bps).
+- \( B \) es el **ancho de banda** en Hz.
+- \( M \) es el **número de niveles** de señal.
 
-Sustituyendo:
+### **Datos del problema**
 
-\[
-\log_{2}(17) \approx 4.09
-\]  
-\[
-10 \times 10^6 = 2B \cdot 4.09
-\]  
-Despejamos \(B\):
+- \( C = 10 \times 10^6 \) bps (10 Mbps)
+- \( M = 17 \) (niveles de señal)
+- Ruido despreciable (aplicación directa de la fórmula de Nyquist)
 
-\[
-B = \frac{10 \times 10^6}{2 \cdot 4.09} \approx 1.22 \text{ MHz}
-\]
+### **Cálculos**
 
-**Resultado:** El ancho de banda necesario es **1.22 MHz**.
+1. Cálculo de \(\log_2(17)\):  
+   \[
+   \log_2(17) \approx 4.09
+   \]
 
-**Tipo de medio guiado sugerido:**  
-Cable coaxial, par trenzado apantallado (STP) o UTP categoría 5 (o superior).
+2. Sustitución en la fórmula:  
+   \[
+   C = 2B \cdot \log_2(M)
+   \quad \Longrightarrow \quad
+   10 \times 10^6 = 2B \cdot 4.09
+   \]
+
+3. Despeje de \( B \):  
+   \[
+   B = \frac{10 \times 10^6}{2 \cdot 4.09}
+     = \frac{10 \times 10^6}{8.18}
+     \approx 1.22 \times 10^6 \,\text{Hz}
+     = 1.22 \,\text{MHz}
+   \]
+
+### **Resultado**
+El **ancho de banda necesario** para cumplir la tasa de 10 Mbps con 17 niveles de señal en banda base es de aproximadamente **1.22 MHz**.
+
+### **Tipo de Medio Guiado**
+Se recomienda un medio capaz de manejar al menos este ancho de banda. Por ejemplo:
+- **Cable Coaxial**  
+- **Par Trenzado Apantallado (STP)**  
+- **Par Trenzado sin Apantallar (UTP)** de categoría 5 o superior  
+
+Cualquiera de estos podría soportar cómodamente una banda de 1.22 MHz (aunque, en la práctica, la elección también depende de otros factores como distancia, interferencia y estándares de transmisión).
 
 ---
 
