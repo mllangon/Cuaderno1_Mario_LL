@@ -1,5 +1,6 @@
-# Cuaderno1_Mario_LL
-https://github.com/mllangon/Cuaderno1_Mario_LL.git
+# Cuaderno1_Mario_LL  
+[https://github.com/mllangon/Cuaderno1_Mario_LL.git](https://github.com/mllangon/Cuaderno1_Mario_LL.git)  
+
 # Actividad: Ejercicios de Aplicación – Temas 1, 2 y 3
 
 **Nombre del estudiante:** [Escribe tu nombre aquí]  
@@ -16,56 +17,48 @@ El propósito de esta actividad es aplicar los conocimientos adquiridos en los t
 
 ## Ejercicio 1
 
-## **Enunciado**
+### **Enunciado**
 Para un sistema de comunicaciones con **17 niveles de señal** que funciona en banda base, se pide **calcular el máximo ancho de banda** cuando el ruido se considera **despreciable** y la **tasa de transmisión** es de **10 Mbits/s**. Asimismo, se solicita indicar **qué tipo de medio guiado** se podría utilizar.
 
 ---
 
-## **Resolución**
+### **Resolución**
 
 Se emplea la **Fórmula de Nyquist** para canales sin ruido, expresada como:
 
-\[
+$$
 C = 2B \cdot \log_2(M)
-\]
+$$
 
-donde:
-- \( C \) es la **tasa de transmisión** en bits por segundo (bps).
-- \( B \) es el **ancho de banda** en Hz.
+donde:  
+- \( C \) es la **tasa de transmisión** en bits por segundo (bps).  
+- \( B \) es el **ancho de banda** en Hz.  
 - \( M \) es el **número de niveles** de señal.
 
-### **Datos del problema**
+#### **Datos del problema**
 
-- \( C = 10 \times 10^6 \) bps (10 Mbps)
-- \( M = 17 \) (niveles de señal)
+- \( C = 10 \times 10^6 \) bps (10 Mbps)  
+- \( M = 17 \) (niveles de señal)  
 - Ruido despreciable (aplicación directa de la fórmula de Nyquist)
 
-### **Cálculos**
+#### **Cálculos**
 
-1. Cálculo de \(\log_2(17)\):  
-   \[
-   \log_2(17) \approx 4.09
-   \]
+1. **Cálculo de log₂(17):**  
+   `log₂(17) ≈ 4.09`
 
-2. Sustitución en la fórmula:  
-   \[
-   C = 2B \cdot \log_2(M)
-   \quad \Longrightarrow \quad
-   10 \times 10^6 = 2B \cdot 4.09
-   \]
+2. **Sustitución en la fórmula:**  
+   `C = 2B * log₂(M)`  
+   `10 × 10⁶ = 2B * 4.09`
 
-3. Despeje de \( B \):  
-   \[
-   B = \frac{10 \times 10^6}{2 \cdot 4.09}
-     = \frac{10 \times 10^6}{8.18}
-     \approx 1.22 \times 10^6 \,\text{Hz}
-     = 1.22 \,\text{MHz}
-   \]
+3. **Despeje de B:**  
+   `B = (10 × 10⁶) / (2 * 4.09)`  
+   `B = (10 × 10⁶) / 8.18`  
+   `B ≈ 1.22 × 10⁶ Hz = 1.22 MHz`
 
-### **Resultado**
+#### **Resultado**
 El **ancho de banda necesario** para cumplir la tasa de 10 Mbps con 17 niveles de señal en banda base es de aproximadamente **1.22 MHz**.
 
-### **Tipo de Medio Guiado**
+#### **Tipo de Medio Guiado**
 Se recomienda un medio capaz de manejar al menos este ancho de banda. Por ejemplo:
 - **Cable Coaxial**  
 - **Par Trenzado Apantallado (STP)**  
@@ -77,58 +70,63 @@ Cualquiera de estos podría soportar cómodamente una banda de 1.22 MHz (aunque,
 
 ## Ejercicio 2
 
-### Enunciado
+### **Enunciado**
 ¿Cuál es la tasa de transmisión máxima en un canal óptico con fibra de ancho de banda de **1 THz** y conversores optoeléctricos de **100 Gbaudios**, si la relación SNR es de **15 dB** y la modulación utilizada en los conversores es de **4 símbolos en cuadratura**?
 
-### Resolución
+---
+
+### **Resolución**
 
 **Paso 1: Conversión de SNR a escala lineal**
 
-\[
+$$
 \text{SNR}_{\text{lineal}} = 10^{\frac{15}{10}} = 31.62
-\]
+$$
 
 ---
 
 **Paso 2: Aplicamos la fórmula de Shannon**
 
-\[
+$$
 C = B \cdot \log_2(1 + \text{SNR})
-\]
-\[
+$$
+
+$$
 C = 1 \times 10^{12} \cdot \log_2(1 + 31.62)
-\]
-\[
+$$
+
+$$
 \log_2(32.62) \approx 5.03
-\]
-\[
+$$
+
+$$
 C = 1 \times 10^{12} \cdot 5.03 = 5.03 \times 10^{12} \, \text{bps} = 5.03 \, \text{Tbps}
-\]
+$$
 
 ---
 
-### Velocidad real con conversores
+### **Velocidad real con conversores**
 
 - **100 Gbaudios** con modulación de **4 símbolos** (QPSK).  
-- Cada símbolo lleva \(\log_2(4) = 2\) bits.  
+- Cada símbolo lleva \( \log_2(4) = 2 \) bits.  
 - Velocidad:
 
-\[
+$$
 100 \times 10^9 \times 2 = 200 \, \text{Gbps}
-\]
+$$
 
 ---
 
-### Resultado final
+### **Resultado final**
 
-- **Tasa teórica máxima del canal**: 5.03 Tbps  
+- **Tasa teórica máxima del canal:** 5.03 Tbps  
 - **Tasa real** (limitada por conversores y modulación): 200 Gbps
 
 ---
 
 ## Ejercicio 3 – Resolución completa y explicada
 
-### Enunciado
+### **Enunciado**
 Si en el sistema anterior se introduce un conector de fibra con un **20% de pérdidas**, responder a las siguientes cuestiones:
 
 a) ¿Se verá afectada la tasa de transmisión máxima?  
@@ -136,7 +134,8 @@ b) ¿Qué velocidad máxima se tendrá en la salida?
 
 ---
 
-### a) ¿Se verá afectada la tasa de transmisión máxima?
+#### a) ¿Se verá afectada la tasa de transmisión máxima?
+
 **Sí.**  
 La fórmula de Shannon depende directamente de la **SNR**. Al introducir una pérdida del 20 %, la **potencia de la señal disminuye**, lo que reduce la SNR y, por ende, **reduce la capacidad máxima teórica del canal**.
 
@@ -144,44 +143,49 @@ La fórmula de Shannon depende directamente de la **SNR**. Al introducir una pé
 
 ---
 
-### b) ¿Qué velocidad máxima se tendrá en la salida?
+#### b) ¿Qué velocidad máxima se tendrá en la salida?
 
 **Paso 1: Reducción de la SNR**  
-SNR original (lineal):  
-\[
+SNR original (lineal):
+
+$$
 \text{SNR}_{\text{original}} = 31.62
-\]  
-Con pérdida del 20%:  
-\[
+$$
+
+Con pérdida del 20%:
+
+$$
 \text{SNR}_{\text{nueva}} = 0.8 \times 31.62 = 25.296
-\]
+$$
 
 ---
 
 **Paso 2: Aplicamos la fórmula de Shannon**
 
-\[
+$$
 C = B \cdot \log_2(1 + \text{SNR})
-\]
-\[
+$$
+
+$$
 C = 1 \times 10^{12} \cdot \log_2(1 + 25.296)
-\]
-\[
+$$
+
+$$
 \log_2(26.296) \approx 4.72
-\]
-\[
+$$
+
+$$
 C = 1 \times 10^{12} \times 4.72 = 4.72 \times 10^{12} \, \text{bps} = 4.72 \, \text{Tbps}
-\]
+$$
 
 **Resultado:**  
-- **Nueva capacidad máxima teórica**: 4.72 Tbps  
-- **Velocidad real práctica (limitada por conversores)**: 200 Gbps  
-
-(Conversores a 100 Gbaudios y modulación QPSK.)
+- **Nueva capacidad máxima teórica:** 4.72 Tbps  
+- **Velocidad real práctica** (limitada por conversores): 200 Gbps  
+*(Conversores a 100 Gbaudios y modulación QPSK.)*
 
 ---
 
-### Conclusión final
+### **Conclusión final**
 Aunque la pérdida afecta la **capacidad máxima teórica** (de 5.03 Tbps a 4.72 Tbps), la **velocidad real de transmisión** sigue siendo **200 Gbps**, siempre que la nueva SNR sea suficiente para mantener la modulación sin errores.
 
 ---
@@ -254,47 +258,50 @@ Este proceso se realiza en sistemas de radio heterodinos o en radios definidas p
 
 ## Ejercicio 6
 
-### Enunciado
+### **Enunciado**
 Indicar las longitudes de onda que se transmiten en cada uno de los puntos marcados en el esquema.
-
-### Análisis del sistema
-El esquema representa un sistema de transmisión óptica basado en **WDM (Wavelength Division Multiplexing)**, donde se combinan distintas longitudes de onda para ser transmitidas a través de una sola fibra y luego separadas nuevamente.
 
 ---
 
-### Funcionamiento por bloques
+### **Análisis del sistema**
 
-- **Entradas al combiner (multiplexor)**  
+El esquema representa un sistema de transmisión óptica basado en **WDM (Wavelength Division Multiplexing)**, donde se combinan distintas longitudes de onda para ser transmitidas a través de una sola fibra y luego separadas nuevamente.
+
+#### **Funcionamiento por bloques**
+
+- **Entradas al combiner (multiplexor):**  
   Cada una de las fibras de entrada transporta una señal óptica con una **longitud de onda diferente**:  
   - Entrada 1: \(\lambda_2\)  
   - Entrada 2: \(\lambda_3\)  
   - Entrada 3: \(\lambda_4\)  
   - Entrada 4: \(\lambda_1\)
 
-- **Fibra compartida**  
+- **Fibra compartida:**  
   El **combiner** junta todas estas señales en una sola fibra. Por tanto, en esta sección viajan simultáneamente:  
   \(\lambda_1 + \lambda_2 + \lambda_3 + \lambda_4\)
 
-- **Splitter (demultiplexor)**  
+- **Splitter (demultiplexor):**  
   El **splitter** divide las señales de nuevo para que lleguen a distintos receptores. En cada salida, se puede:  
   - Enviar todas las longitudes de onda (si no hay filtrado), o  
   - Separar selectivamente cada longitud de onda usando filtros.
 
----
+#### **¿Qué representan las partes grises en las salidas del splitter?**
 
-### ¿Qué representan las partes grises en las salidas del splitter?
 Las piezas grises en el esquema, ubicadas antes del extremo de cada salida, representan probablemente:
 
-1. **Filtros ópticos sintonizados por longitud de onda**  
-   Permiten que cada salida deje pasar únicamente **una longitud de onda específica (\(\lambda_i\))**.  
-2. **Receptores ópticos integrados**  
-   Pueden incluir **fotodetectores** (conversión óptico-eléctrica).  
-3. **Conectores ópticos con filtrado**  
+1. **Filtros ópticos sintonizados por longitud de onda:**  
+   Permiten que cada salida deje pasar únicamente **una longitud de onda específica (\(\lambda_i\))**.
+
+2. **Receptores ópticos integrados:**  
+   Pueden incluir **fotodetectores** (conversión óptico-eléctrica).
+
+3. **Conectores ópticos con filtrado:**  
    En algunos sistemas, los conectores pueden incluir funciones de filtrado o atenuación selectiva.
 
 ---
 
-### Conclusión
+### **Conclusión**
+
 - En las **entradas**, cada fibra lleva una longitud de onda diferente (\(\lambda_1\) a \(\lambda_4\)).  
 - En la **fibra compartida**, se transmiten todas las longitudes de onda simultáneamente.  
 - En las **salidas del splitter**, cada puerto puede recibir todas las longitudes de onda o una filtrada, dependiendo del uso de filtros ópticos o receptores específicos.
@@ -302,7 +309,6 @@ Las piezas grises en el esquema, ubicadas antes del extremo de cada salida, repr
 Las partes grises indican componentes que **seleccionan o reciben** una longitud de onda específica, asegurando que cada señal llegue al destino correcto.
 
 ---
-
 ## Ejercicio 7
 
 ### Enunciado
@@ -319,53 +325,61 @@ Dibujar el proceso de encapsulamiento y calcular la eficiencia del sistema.
 
 ## Ejercicio 8
 
-### Enunciado
+### **Enunciado**
 Un sistema satélite divide la información de la capa 3 en bloques de **1904 bits**, a los que añade una cabecera de **64 bits**.  
 Si cada trama tarda en transmitirse **20 ms** y la latencia del satélite es de **85 ms**, ¿cuánto tiempo tardará en realizar la transmisión de **5 Mbytes** de información?
 
-### Resolución
+---
 
-1. **Tamaño total por trama**  
-\[
-1904 + 64 = 1968 \text{ bits}
-\]
+### **Resolución**
 
-2. **Total de bits a transmitir**  
-\[
-5 \text{ MB} = 5 \times 1024 \times 1024 \times 8 = 41{,}943{,}040 \text{ bits}
-\]
+1. **Tamaño total por trama:**
 
-3. **Número de tramas necesarias**  
-\[
-\frac{41{,}943{,}040}{1968} \approx 21{,}309.3 \Rightarrow 21{,}310 \text{ tramas}
-\]
+   $$
+   1904 + 64 = 1968 \text{ bits}
+   $$
 
-4. **Tiempo total de transmisión**  
-   - **Transmisión**: \(21{,}310 \times 20 \text{ ms} = 426{,}200 \text{ ms} = 426.2 \text{ s}\)  
-   - **Latencia** (asumiendo ida + vuelta): \(2 \times 85 = 170 \text{ ms} = 0.17 \text{ s}\)
+2. **Total de bits a transmitir:**
 
-**Resultado final**  
-\[
+   $$
+   5 \text{ MB} = 5 \times 1024 \times 1024 \times 8 = 41{,}943{,}040 \text{ bits}
+   $$
+
+3. **Número de tramas necesarias:**
+
+   $$
+   \frac{41{,}943{,}040}{1968} \approx 21{,}309.3 \Rightarrow 21{,}310 \text{ tramas}
+   $$
+
+4. **Tiempo total de transmisión:**  
+   - **Transmisión:**  
+     \(21{,}310 \times 20 \text{ ms} = 426{,}200 \text{ ms} = 426.2 \text{ s}\)  
+   - **Latencia** (asumiendo ida + vuelta):  
+     \(2 \times 85 = 170 \text{ ms} = 0.17 \text{ s}\)
+
+**Resultado final:**
+
+$$
 \text{Tiempo total} = 426.2 + 0.17 = 426.37 \text{ segundos}
-\]
+$$
 
 ---
 
 ## Ejercicio 9
 
-### Enunciado
+### **Enunciado**
 Calcular el resultado de un paquete de datos “1111011101010101” en un sistema de enlace de datos con las siguientes especificaciones:
 
-- Secuencia de inicio de trama: “010101010”  
-- Protección frente a errores: Hamming (7,4)  
-- Tamaño máximo por trama: 4 bytes
-
-### Resolución
-
-**Datos**  
-- Tamaño total: 16 bits = 2 bytes → **entra en una única trama**.
+- **Secuencia de inicio de trama:** “010101010”  
+- **Protección frente a errores:** Hamming (7,4)  
+- **Tamaño máximo por trama:** 4 bytes
 
 ---
+
+### **Resolución**
+
+**Datos:**  
+- Tamaño total: 16 bits = 2 bytes → **Entra en una única trama.**
 
 **Paso 1: Codificación Hamming (7,4)**  
 Se divide en bloques de 4 bits:
@@ -373,55 +387,54 @@ Se divide en bloques de 4 bits:
 1. 1111  
 2. 0111  
 3. 0101  
-4. 0101
+4. 0101  
 
-Cada bloque de 4 bits se codifica en 7 bits (tabla de Hamming):
+Cada bloque de 4 bits se codifica en 7 bits (según la tabla de Hamming):
 
 - 1111 → 1111011  
 - 0111 → 0111011  
 - 0101 → 0101001  
 - 0101 → 0101001  
 
-Total bits codificados:  
+Total de bits codificados:  
 4 bloques \(\times\) 7 bits = **28 bits**
-
----
 
 **Paso 2: Añadir secuencia de inicio**  
 - Secuencia de inicio: 9 bits → “010101010”  
 - Trama total: \(9 + 28 = 37\) bits
 
----
-
-**Resultado final**  
+**Resultado final:**  
 Trama de salida = **Inicio (9 bits) + Datos codificados (28 bits) = 37 bits**
 
 ---
 
 ## Ejercicio 10
 
-### Enunciado
+### **Enunciado**
 Un fabricante indica que su sistema integra un **CRC-8** con el siguiente polinomio generador:
 
-\[
+$$
 G(x) = x^8 + x^7 + x^2 + 1
-\]
+$$
 
 Plantear los pasos que se deben realizar para calcular la trama resultante, considerando que el CRC se aplica al final de la **trama 2** del ejercicio anterior.
 
-### Resolución
+---
 
-**Polinomio generador en binario**: 110000101
+### **Resolución**
 
-1. Obtener la secuencia de bits de la trama 2 (0111).  
-2. Codificar con H(7,4) → Resultado: 0111011.  
-3. Multiplicar por \(x^8\): añadir 8 ceros al final:  
+**Polinomio generador en binario:**  
+`110000101`
+
+1. Obtener la secuencia de bits de la trama 2 (por ejemplo, "0111").  
+2. Codificar con Hamming (7,4) → Resultado: "0111011".  
+3. Multiplicar por \(x^8\): añadir 8 ceros al final, resultando en:  
    `0111011 00000000`  
-4. Dividir esta cadena por el generador binario (110000101).  
+4. Dividir esta cadena por el generador binario (`110000101`).  
 5. El **residuo** de esa división es el CRC de 8 bits.  
 6. Concatenar la secuencia original codificada con el CRC calculado.
 
-**Resultado final**  
+**Resultado final:**  
 La trama estará formada por la **codificación Hamming + 8 bits de CRC**.
 
 ---
@@ -519,50 +532,51 @@ Dibujar un diagrama de ventana deslizante con un receptor con buffer para tres t
 
 ## Ejercicio 16
 
-### Enunciado
+### **Enunciado**
 Un canal coaxial con FDM, con una tasa de transmisión de **500 Mbits/s**, una longitud media de trama de \(\frac{1}{\mu} = 12584\) bits y una tasa de llegada \(\lambda = 20000\) tramas/s:
 
 a) ¿Qué retardo tendrá?  
 b) ¿Cuántas portadoras serán necesarias si se comparte entre 256 usuarios?  
 c) ¿Cuánto tiempo tarda un nodo en detectar una colisión?
 
-### Resolución
-
-Usamos el **modelo M/M/1** para cálculo de retardo promedio:
-
-\[
-T = \frac{1}{\mu - \lambda}
-\]
-
-Donde:  
-\[
-\mu = \frac{500 \times 10^6}{12584} \approx 39722.5 \quad (\text{tramas/s})
-\]  
-\[
-\lambda = 20000 \quad (\text{tramas/s})
-\]  
-
-\[
-T = \frac{1}{39722.5 - 20000} = \frac{1}{19722.5} \approx 5.07 \times 10^{-5} \text{ s} = 50.7 \,\mu \text{s}
-\]
-
 ---
 
-**(a) Retardo**  
-\(\approx 50.7\) μs
+### **Resolución**
 
-**(b) Número de portadoras**  
-Para FDM y 256 usuarios, cada usuario necesita una portadora.  
-\[
-\text{Portadoras necesarias} = 256
-\]
+Utilizamos el **modelo M/M/1** para el cálculo de retardo promedio:
 
-**(c) Tiempo de detección de colisión**  
-En coaxial (CSMA/CD), se basa en el tiempo de propagación. Sin datos físicos de la longitud del medio, no se puede dar un valor exacto. Aproximadamente sería:
+$$
+T = \frac{1}{\mu - \lambda}
+$$
 
-\[
-t_{\text{colisión}} \approx 2 \times t_{\text{propagación}}
-\]
+donde:  
+
+$$
+\mu = \frac{500 \times 10^6}{12584} \approx 39722.5 \quad (\text{tramas/s})
+$$
+
+$$
+\lambda = 20000 \quad (\text{tramas/s})
+$$
+
+Entonces,
+
+$$
+T = \frac{1}{39722.5 - 20000} = \frac{1}{19722.5} \approx 5.07 \times 10^{-5} \text{ s} = 50.7 \, \mu \text{s}
+$$
+
+- **(a) Retardo:**  
+  \(\approx 50.7 \, \mu \text{s}\)
+
+- **(b) Número de portadoras:**  
+  Para FDM y 256 usuarios, cada usuario necesita una portadora.  
+  $$\text{Portadoras necesarias} = 256$$
+
+- **(c) Tiempo de detección de colisión:**  
+  En coaxial (CSMA/CD), se basa en el tiempo de propagación. Sin datos físicos de la longitud del medio, no se puede dar un valor exacto. Aproximadamente sería:  
+  $$
+  t_{\text{colisión}} \approx 2 \times t_{\text{propagación}}
+  $$
 
 ---
 
