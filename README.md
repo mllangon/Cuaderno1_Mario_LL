@@ -489,38 +489,7 @@ Sí, se puede aplicar, pero **no** es eficiente. Protocolos más robustos (Go-Ba
 Dibujar un diagrama de ventana deslizante con un receptor con buffer para tres tramas y un transmisor que dispone de 5 tramas **desordenadas** que llegan en el orden: **0, 3, 2, 4, 1**.
 
 ### Resolución
-
-**Supuestos**  
-- Ventana del receptor: tamaño 3  
-- Tramas esperadas inicialmente: 0, 1, 2  
-- Orden de llegada: 0, 3, 2, 4, 1  
-
-**Comportamiento del receptor**  
-1. Llega trama 0  
-   - Esperada. Se acepta.  
-   - Ventana se desliza a [1, 2, 3].  
-2. Llega trama 3  
-   - Dentro de la ventana. Se almacena en buffer.  
-   - No se entrega aún (falta 1 y 2).  
-3. Llega trama 2  
-   - Dentro de la ventana. Se almacena.  
-   - Aún no se entrega (falta 1).  
-4. Llega trama 4  
-   - Fuera de la ventana actual ([1, 2, 3]). Se **descarta**.  
-5. Llega trama 1  
-   - Esperada. Se acepta.  
-   - Se puede entregar en orden: 1 → 2 → 3.  
-   - La ventana se desliza a [4, 5, 6].
-
-**Diagrama esquemático (simplificado)**
-
-| Tiempo | Trama recibida | Estado del buffer | Entrega al receptor | Ventana actual |
-|-------:|:--------------:|:-----------------:|:-------------------:|:--------------:|
-| T1     | 0             | []               | 0                  | [1,2,3]        |
-| T2     | 3             | [3]              | -                  | [1,2,3]        |
-| T3     | 2             | [2,3]            | -                  | [1,2,3]        |
-| T4     | 4             | [2,3]            | -                  | [1,2,3]        |
-| T5     | 1             | [] (se entregan 1,2,3) | 1→2→3         | [4,5,6]        |
+![image](https://github.com/user-attachments/assets/7c26de41-a04d-4413-b467-f02ba86077da)
 
 ---
 
@@ -617,25 +586,7 @@ El resultado final será una señal en la que cada bit está representado por do
 
 ## Ejercicio 18
 
-### Enunciado
-Diseñar una red Bluetooth que pueda mantener 15 nodos esclavos activos de manera simultánea.
-
-### Resolución
-
-En Bluetooth clásico, la **topología** principal es la **piconet**, con:
-- 1 maestro
-- Hasta 7 esclavos activos al mismo tiempo
-
-Para tener **15 esclavos** activos simultáneamente, se requiere una **scatternet**, que conecta varias piconets a través de nodos puente:
-- Un dispositivo puede actuar como **maestro** en una piconet y como **esclavo** en otra.
-
-**Diseño propuesto**:
-- **Piconet A**:  
-  - 1 maestro + 7 esclavos  
-- **Piconet B**:  
-  - 1 maestro (que podría ser esclavo en la piconet A) + 8 esclavos  
-
-Así, entre la piconet A y B, se dispondría de 15 esclavos activos, enlazados mediante al menos un **nodo puente** (que figura como esclavo en la piconet del otro maestro). De esta manera, se cumplen las limitaciones de Bluetooth y se mantiene la comunicación simultánea de todos los nodos en una scatternet.
+![image](https://github.com/user-attachments/assets/550723df-3ea8-4e9b-9714-0d30d99bc603)
 
 ---
 
@@ -684,9 +635,6 @@ Si el switch B3 deja de estar activo, el árbol debe reorganizarse automáticame
 - B4 se mantiene como intermediario directo de B5.
 - La red sigue conectada sin bucles, cumpliendo con los principios del Spanning Tree.
 
-**Conclusión general:**  
-- En el Ejercicio 19, la raíz B5 conecta directamente a B3 y B4; B1 y B2 dependen de B3.
-- En el Ejercicio 20, al fallar B3, B1 y B2 se reencaminan por B4, manteniendo la estructura libre de bucles.
 
 
 
