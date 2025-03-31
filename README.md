@@ -289,62 +289,7 @@ La capa 1 añade a cada 30 bytes de datos: 32 bits de comienzo, un byte de parad
 
 Dibujar el proceso de encapsulamiento y calcular la eficiencia del sistema.
 
-### Resolución
-
-**Paso 1: Datos de entrada**  
-- Bloque de datos (Capa 4): 1 Kbyte = 1024 bytes
-
----
-
-**Paso 2: Capa 3**  
-- Cabecera: 256 bits = 32 bytes  
-- Datos + cabecera C3: \(1024 + 32 = 1056\) bytes  
-- Paquetes de 512 bytes:
-
-\[
-\left\lceil \frac{1056}{512} \right\rceil = 3 \quad (\text{paquetes})
-\]
-
----
-
-**Paso 3: Capa 2**  
-- Cada paquete lleva una cabecera de 512 bits = 64 bytes  
-- Tamaño total por paquete: \(512 + 64 = 576\) bytes  
-- Tramas de 128 bytes de datos:
-
-\[
-\left\lceil \frac{576}{128} \right\rceil = 5 \quad (\text{tramas por paquete})
-\]
-
-- Total tramas: \(3 \times 5 = 15\) tramas
-
----
-
-**Paso 4: Capa 1**  
-Por cada 30 bytes:  
-- Añade 32 bits de inicio (4 bytes), 1 byte de parada y 16 bits de CRC (2 bytes).  
-- **Sobrecarga**: 7 bytes por cada 30 bytes de datos.
-
-Para cada trama (128 bytes de datos):
-- \(\left\lfloor \frac{128}{30} \right\rfloor = 4\) bloques completos de 30 bytes  
-  - 4 bloques \(\times\) 7 bytes = 28 bytes de sobrecarga  
-- Resto: 8 bytes (sin aplicar regla de sobrecarga adicional, según enunciado)  
-- Total por trama: \(128 + 28 = 156\) bytes  
-
----
-
-**Total de transmisión**  
-15 tramas \(\times\) 156 bytes = **2340 bytes transmitidos**
-
----
-
-**Eficiencia**  
-- Datos útiles = 1024 bytes  
-- Total transmitido = 2340 bytes  
-
-\[
-\text{Eficiencia} = \frac{1024}{2340} \times 100 \approx 43.76\%
-\]
+![image](https://github.com/user-attachments/assets/64eab142-1901-4e01-b33a-3bea240abd23)
 
 ---
 
